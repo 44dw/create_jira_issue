@@ -1,15 +1,15 @@
 from distutils.core import setup
 # https://medium.com/@joel.barmettler/how-to-upload-your-python-package-to-pypi-65edc5fe9c56
 setup(
-    name='create_lira_issue',
+    name='create_jira_issue',
     packages=['create_jira_issue'],
-    version='0.1',
+    version='0.1.1',
     license='MIT',
     description='Command line app for work with Atlassian Jira',
     author='44dw',
     author_email='elevation1987@gmail.com',
     url='https://github.com/44dw',
-    download_url='https://github.com/44dw/create_jira_issue/archive/refs/tags/0.1.tar.gz',
+    download_url='https://github.com/44dw/create_jira_issue/archive/refs/tags/0.1.1.tar.gz',
     keywords=['Jira', 'Console'],
     install_requires=[
         'requests',
