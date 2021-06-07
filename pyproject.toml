@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "create_jira_issue"
+version = "0.1.2"
+description = ""
+authors = ["Dmitrii Akhmetshin <elevation1987@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.25.1"
+argparse = "^1.4.0"
+urllib3 = "^1.26.5"
+url-normalize = "^1.4.3"
+PyYAML = "^5.4.1"
+
+[tool.poetry.scripts]
+cjiss = "create_jira_issue.create_jira_issue:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

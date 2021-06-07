@@ -95,7 +95,11 @@ def create_jira_issue(summary, description, settings_path, to_sprint):
         add_to_sprint(issue_key, settings)
 
 
-if __name__ == '__main__':
+def main():
     parser = populate_with_args(argparse.ArgumentParser())
     args = parser.parse_args()
     create_jira_issue(args.s, args.d, args.n, args.sprint)
+
+
+if __name__ == '__main__':
+    main()
