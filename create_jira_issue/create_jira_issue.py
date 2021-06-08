@@ -55,7 +55,7 @@ def get_active_sprint(settings):
                             headers={'Content-Type': 'application/json'},
                             auth=(settings['login'], settings['password']),
                             verify=False)
-    if response.status_code != 201:
+    if response.status_code != 200:
         print(f'error getting active sprint! Response is {response.json()} ({response.status_code})')
     else:
         body = response.json()
@@ -77,7 +77,7 @@ def add_to_sprint(issue_key, settings):
     if response.status_code == 204:
         print(f"putting issue {issue_key} to sprint is successful!")
     else:
-        print(f"putting issue {issue_key} to sprint is NOT successful! Response message is {response.reason}")
+        print(f"putting issue {issue_key} to sprint is NOT successful!")
 
 
 def create_jira_issue(summary, description, settings_path, to_sprint):
