@@ -1,21 +1,22 @@
 # create_jira_issue
 
-##Description
+## Description
 This command line app will help you to create issues from console
-##Usage
+## Usage
 ```shell
-create_jira_issue -s "Your issue summary" -d "your issue description" -n "./settings.yml" --sprint
+cjiss -s "Your issue summary" -d "your issue description" -n "./settings.yml" --sprint
 ```
-##Arguments
+## Arguments
 _s_ - [MANDATORY] issue summary
 
 _d_ - issue description
 
-_n_ - [MANDATORY] path to your issue settings in yaml (see below)
+_n_ - path to your issue settings in yaml (see below). If not provided, file with name "settings.yml" will be looked in
+the current directory
 
 _sprint_ - issue will be added to current sprint.
 
-##Settings
+## Settings
 ```yaml
 # fill this to make the script work
 
@@ -27,6 +28,9 @@ login: your_login
 password: your_pass
 # project you work in
 project: PROJECT
+# jira issue type (epic, issue, etc) id
+# 3 stands for issue
+issue_type: 3
 # default priority id
 priority_id: 4
 # default assignee
