@@ -1,12 +1,12 @@
 # create_jira_issue
 
-##Description
+## Description
 This command line app will help you to create issues from console
-##Usage
+## Usage
 ```shell
 cjiss -s "Your issue summary" -d "your issue description" -n "./settings.yml" --sprint
 ```
-##Arguments
+## Arguments
 _s_ - [MANDATORY] issue summary
 
 _d_ - issue description
@@ -16,7 +16,7 @@ the current directory
 
 _sprint_ - issue will be added to current sprint.
 
-##Settings
+## Settings
 ```yaml
 # fill this to make the script work
 
