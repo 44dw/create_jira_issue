@@ -2,12 +2,14 @@ import requests
 import argparse
 import yaml
 import json
+import os
+import sys
 from urllib3.exceptions import InsecureRequestWarning
 from url_normalize import url_normalize
 
 requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
-TASK_ISSUE_TYPE = '3'
+DEFAULT_SETTINGS_NAME = "settings.yml"
 
 
 def populate_with_args(parser):
@@ -18,15 +20,18 @@ def populate_with_args(parser):
     return parser
 
 
-def read_settings(settings_path="settings.yml"):
-    with open(settings_path, 'r') as settings_file:
-        return yaml.full_load(settings_file)
+def read_settings(settings_path=DEFAULT_SETTINGS_NAME):
+    try:
+        with open(settings_path, 'r') as settings_file:
+            return yaml.full_load(settings_file)
+    except IOError:
+        sys.exit("error loading settings file!")
 
 
 def get_create_issue_data(settings, summary, description):
     return {
         'fields': {
-            'issuetype': {'id': '3'},
+            'issuetype': {'id': settings['issue_type']},
             'project': {'key': settings['project']},
             'summary': summary,
             'priority': {'id': str(settings['priority_id'])},
@@ -95,9 +100,15 @@ def create_jira_issue(summary, description, settings_path, to_sprint):
         add_to_sprint(issue_key, settings)
 
 
+def validate_args(args):
+    if not bool(args.n) and not os.path.exists(DEFAULT_SETTINGS_NAME):
+        sys.exit("settings file not found!")
+
+
 def main():
     parser = populate_with_args(argparse.ArgumentParser())
     args = parser.parse_args()
+    validate_args(args)
     create_jira_issue(args.s, args.d, args.n, args.sprint)
 
 
