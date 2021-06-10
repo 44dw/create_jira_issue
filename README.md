@@ -30,7 +30,7 @@ password: your_pass
 project: PROJECT
 # jira issue type (epic, issue, etc) id
 # 3 stands for issue
-issue_type: 3
+issuetype_id: 3
 # default priority id
 priority_id: 4
 # default assignee

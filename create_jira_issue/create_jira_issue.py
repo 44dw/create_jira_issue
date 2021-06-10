@@ -31,7 +31,7 @@ def read_settings(settings_path=DEFAULT_SETTINGS_NAME):
 def get_create_issue_data(settings, summary, description):
     return {
         'fields': {
-            'issuetype': {'id': settings['issue_type']},
+            'issuetype': {'id': str(settings['issuetype_id'])},
             'project': {'key': settings['project']},
             'summary': summary,
             'priority': {'id': str(settings['priority_id'])},
