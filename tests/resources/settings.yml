@@ -1,0 +1,22 @@
+# your jira url
+jira_url: https://your.jira.url.com
+# login in jira
+login: your_login
+# pass in jira
+password: your_pass
+# project you work in
+project: PROJECT
+# jira issue type (epic, issue, etc) id
+# 3 stands for issue
+issuetype_id: 3
+# default priority id
+priority_id: 4
+# default assignee
+assignee: assignee_login
+# default assignee
+reporter: your_login
+# your jira board id
+board_id: 20801
+# labels to add
+labels:
+  - new

@@ -11,7 +11,7 @@ setup(
     url='https://github.com/44dw',
     download_url='https://github.com/44dw/create_jira_issue/archive/refs/tags/0.1.3.tar.gz',
     keywords=['Jira', 'Console'],
-    scripts=['./create_jira_issue/create_jira_issue.py'],
+    scripts=['./create_jira_issue/logic.py'],
     install_requires=[
         'requests',
         'argparse',
