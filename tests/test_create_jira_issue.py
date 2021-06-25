@@ -6,10 +6,6 @@ import create_jira_issue.logic
 
 
 class CreateJiraIssueTests(unittest.TestCase):
-    def test_something(self):
-        result = create_jira_issue.logic.to_test(2)
-        self.assertEqual(result, 4)
-
     def test_read_settings__success(self):
         result = create_jira_issue.logic.read_settings("./resources/settings.yml")
         self.assertIsNotNone(self, result)
@@ -68,6 +64,12 @@ class CreateJiraIssueTests(unittest.TestCase):
         create_jira_issue.logic.process_create_task_response(response, "www.jira.com/")
         self.assertEqual(" ".join(captured_output.getvalue().split()),
                          "error creating jira issue! Response is {'message': 'error'} (500)")
+
+    def test_get_active_sprint(self):
+        settings = {
+            'jira_url': 'www.jira.com/',
+            'board_id': 12187
+        }
 
 
 if __name__ == '__main__':

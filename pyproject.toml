@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "create_jira_issue"
-version = "0.1.5"
+version = "0.1.6"
 description = "CLI app to create issues in Jira from console"
 authors = ["Dmitrii Akhmetshin <elevation1987@gmail.com>"]
 license = "MIT"
