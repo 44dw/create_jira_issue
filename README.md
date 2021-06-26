@@ -43,3 +43,9 @@ board_id: 20801
 labels:
   - new
 ```
+
+## Usage
+You can install CLI application with **pip**:
+```bash
+pip install create-jira-issue
+```
