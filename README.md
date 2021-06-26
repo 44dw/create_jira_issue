@@ -44,7 +44,7 @@ labels:
   - new
 ```
 
-## Usage
+## Installation
 You can install CLI application with **pip**:
 ```bash
 pip install create-jira-issue
